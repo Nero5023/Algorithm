@@ -37,8 +37,28 @@ if __name__ == '__main__':
     node3.next = node4
     node4.next = node5
     node5.next = node6
+    list1 = Node(0)
+    list1c = list1
+    list2 = Node(0)
+    list2c = list2
     for n in node1.iterable():
-        print n.val
+        # print n.val
+        if n.val <= 3:
+            list1c.next = n
+            list1c = list1c.next
+        else:
+            list2c.next = n
+            list2c = list2c.next
+    list1c.next = None
+    list2c.next = None
+    for x in list1.next.iterable():
+        print x.val
+    print "----"
+    for y in list2.next.iterable():
+        print y.val
+        # if n.next is not None and n.next.val == 2:
+        #     n.next = n.next.next
+        # print n.val
 
-    x = linkedListLaskKthNode(2, node1)
-    print x.val
+    # x = linkedListLaskKthNode(2, node1)
+    # print x.val
