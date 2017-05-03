@@ -4,5 +4,6 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        s.reverse()
-        return s
+        sList = list(s)
+        sList.reverse()
+        return ''.join(sList)
