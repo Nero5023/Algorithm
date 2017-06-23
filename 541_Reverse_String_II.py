@@ -16,4 +16,4 @@ def reverseHalf(k):
             return s[::-1]
         firstK = s[:k][::-1]
         return firstK + s[k:]
-    return innerFunc
+    return innerFun
