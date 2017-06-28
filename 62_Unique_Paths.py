@@ -5,8 +5,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if m+n-2 == 1:
-            return 1
         return C(m+n-2, n-1)
 
 def factorial(n):
