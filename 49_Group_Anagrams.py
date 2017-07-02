@@ -8,17 +8,6 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         dic = defaultdict(list)
-        keyMap = {}
-        # for x in strs:
-        #     if x in keyMap:
-        #         key = keyMap[x]
-        #         dic[key].append(x)
-        #     else:
-        #         for strlist in permutations(x):
-        #             s = "".join(strlist)
-        #             keyMap[s] = x
-        #         dic[x].append(x)
-
         for x in strs:
             strarry = list(x)
             strarry.sort()
@@ -28,7 +17,6 @@ class Solution(object):
         res = []
         for x in dic:
             res.append(dic[x])
-        print res
         return res
 
 if __name__ == '__main__':
