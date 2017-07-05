@@ -1,23 +1,18 @@
-class Solution(object):
-    def myAtoi(self, str):
-        """
-        :type str: str
-        :rtype: int
-        """
+class Solution:
+    # @return an integer
+    def atoi(self, str):
         str = str.strip()
-        if str == "":
-            return 0
-        if str[0] == "-":
-            res = self.myAtoi(str[1:])
-            return -1*res
-        if str[0] == "+":
-            return self.myAtoi(str[1:])
-        higher = str[:len(str)-1]
-        higherNum = self.myAtoi(higher)
-        last = str[-1]
+        str = re.findall('(^[\+\-0]*\d+)\D*', str)
+
         try:
-            lastNum = int(last)
+            result = int(''.join(str))
+            MAX_INT = 2147483647
+            MIN_INT = -2147483648
+            if result > MAX_INT > 0:
+                return MAX_INT
+            elif result < MIN_INT < 0:
+                return MIN_INT
+            else:
+                return result
         except:
-            return higherNum
-        else:
-            return higherNum*10 + lastNum
+            return 0
